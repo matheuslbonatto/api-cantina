@@ -1,7 +1,10 @@
 package br.senac.cantina.operador;
 import org.springframework.data.repository.ListCrudRepository;
-import br.senac.cantina.shared.models.operador;
+import org.springframework.stereotype.Repository;
 
-public interface OperadorRepository  extends ListCrudRepository<operador, Long>{
+import br.senac.cantina.shared.models.Operador;
+
+@Repository
+public interface OperadorRepository  extends ListCrudRepository<Operador, Long>{
     
 }

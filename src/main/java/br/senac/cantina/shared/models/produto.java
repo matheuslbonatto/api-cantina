@@ -2,7 +2,7 @@ package br.senac.cantina.shared.models;
 
 import java.time.LocalDateTime;
 
-public class produto {
+public class Produto {
     // Criar os atributos para a tabela Produto
     private int id;
     private char nome;
@@ -13,7 +13,7 @@ public class produto {
     
     
      // Criar um método construtor com todos os atributos
-    public produto(int id, char nome, char descricao, double preco, float quantidade, LocalDateTime dataHora) {
+    public Produto(int id, char nome, char descricao, double preco, float quantidade, LocalDateTime dataHora) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

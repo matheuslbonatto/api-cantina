@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.senac.cantina.operador.dto.CreateOperadorDto;
 import br.senac.cantina.operador.impl.OperadorServiceImpl;
-import br.senac.cantina.shared.models.operador;
+import br.senac.cantina.shared.models.Operador;
 
 @RestController
 @RequestMapping("/operador")
@@ -21,21 +21,23 @@ public class OperadorController {
  
     private final OperadorServiceImpl operadorService;
 
-    public OperadorController (OperadorServiceImpl operadorService, OperadorServiceImpl operadorService2) {
+
+    
+     public OperadorController(OperadorServiceImpl operadorService) {
         this.operadorService = operadorService;
-        }
+    }
 
     // Criar um novo Operador
     @PostMapping
-    public ResponseEntity<Object> save(@RequestBody CreateOperadorDto dto) {
+    public ResponseEntity<Operador> save(@RequestBody CreateOperadorDto dto) {
         var saved = this.operadorService.save(dto);
         return ResponseEntity.ok(saved);
     }
    
     // GET - Listar os Operadores 
     @GetMapping ("")
-    public List<operador> getOperador() {
-        return OperadorService.findAll();
+    public List<Operador> getOperador() {
+        return operadorService.findAll();
     }
 
     //GET - Listar produtos por ID

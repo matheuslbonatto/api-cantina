@@ -1,20 +1,19 @@
+
 package br.senac.cantina.operador;
 
 import java.util.List;
 
 import br.senac.cantina.operador.dto.CreateOperadorDto;
-import br.senac.cantina.shared.models.operador;
+import br.senac.cantina.shared.models.Operador;
+
 
 public interface OperadorService {
 
-    public operador save(CreateOperadorDto dto);
+    public Operador save(CreateOperadorDto dto);
     
-    public static List<operador> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
+    public List<Operador> findAll();
     
-    public operador findById(Long id);
+    public Operador findById(Long id);
 
     public void deleteById(Long id);
 }

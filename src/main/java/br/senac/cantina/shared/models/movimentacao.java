@@ -2,7 +2,7 @@ package br.senac.cantina.shared.models;
 
 import java.time.LocalDateTime;
 
-public class movimentacao {
+public class Movimentacao {
  private int id;
  private long produtoId;
  private long quantidade;
@@ -11,7 +11,7 @@ public class movimentacao {
  private char tipoRegistro;
 
  
- public movimentacao(int id, long produtoId, long quantidade, LocalDateTime dataHora, long operadorId,
+ public Movimentacao(int id, long produtoId, long quantidade, LocalDateTime dataHora, long operadorId,
         char tipoRegistro) {
     this.id = id;
     this.produtoId = produtoId;
