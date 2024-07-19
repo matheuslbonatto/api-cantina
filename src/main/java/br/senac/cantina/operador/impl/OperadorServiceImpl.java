@@ -32,7 +32,8 @@ public class OperadorServiceImpl implements OperadorService {
     @Override
     public Operador findById(Long id) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        //throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return operadorRepository.findById(id).orElse(null);
     }
 
     @Override
