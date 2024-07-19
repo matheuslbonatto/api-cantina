@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.senac.cantina.operador.OperadorRepository;
 import br.senac.cantina.operador.OperadorService;
 import br.senac.cantina.operador.dto.CreateOperadorDto;
 import br.senac.cantina.shared.models.Operador;
+import br.senac.cantina.shared.repositories.OperadorRepository;
 
 @Service
 public class OperadorServiceImpl implements OperadorService {

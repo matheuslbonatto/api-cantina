@@ -16,7 +16,7 @@ import br.senac.cantina.operador.impl.OperadorServiceImpl;
 import br.senac.cantina.shared.models.Operador;
 
 @RestController
-@RequestMapping("/operador")
+@RequestMapping("/operadores")
 public class OperadorController {
  
     private final OperadorServiceImpl operadorService;

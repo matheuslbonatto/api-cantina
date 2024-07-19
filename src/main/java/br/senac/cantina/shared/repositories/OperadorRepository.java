@@ -1,4 +1,4 @@
-package br.senac.cantina.operador;
+package br.senac.cantina.shared.repositories;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
