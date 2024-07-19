@@ -40,7 +40,7 @@ public class OperadorController {
         return operadorService.findAll();
     }
 
-    //GET - Listar produtos por ID
+    //GET - Listar Operador por ID
     @GetMapping ("/{id}")
     public ResponseEntity<Object> getOperdarbyId(@PathVariable Long id) {
         var operador = operadorService.findById(id);

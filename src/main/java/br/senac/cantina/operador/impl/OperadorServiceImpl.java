@@ -20,8 +20,8 @@ public class OperadorServiceImpl implements OperadorService {
 
     @Override
     public Operador save(CreateOperadorDto dto) {
-        Operador operador = new Operador(null, dto.nome(), dto.usuario(), dto.senha());
-        return operadorRepository.save(operador);
+       var operador = new Operador(null, dto.nome(), dto.usuario(), dto.senha());
+        return this.operadorRepository.save(operador);
     }
 
     @Override
@@ -39,6 +39,12 @@ public class OperadorServiceImpl implements OperadorService {
     public void deleteById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+    }
+
+    @Override
+    public void update(Operador object) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
 

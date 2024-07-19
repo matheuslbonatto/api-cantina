@@ -12,6 +12,8 @@ public interface OperadorService {
     public Operador save(CreateOperadorDto dto);
     
     public List<Operador> findAll();
+
+    public void update(Operador object);
     
     public Operador findById(Long id);
 

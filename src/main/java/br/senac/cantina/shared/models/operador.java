@@ -1,7 +1,12 @@
 package br.senac.cantina.shared.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table ("operadores")
 public class Operador {
     // Criar os atributos para a tabela operador
+    @Id
     private Long id;
     private String nome;
     private String usuario;

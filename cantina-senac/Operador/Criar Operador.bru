@@ -5,7 +5,15 @@ meta {
 }
 
 post {
-  url: http://localhost:8080/operador
-  body: none
+  url: http://localhost:8080/operadores
+  body: json
   auth: none
+}
+
+body:json {
+  {
+  "nome":"RAFAEL ROSARIO",
+  "usuario":"rafael.rosario",
+  "senha":"1221"
+  }
 }
