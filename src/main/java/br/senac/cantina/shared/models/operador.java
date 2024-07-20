@@ -51,4 +51,9 @@ public class Operador {
         this.senha = senha;
     }
 
+    public void setSenha(char senha2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setSenha'");
+    }
+
 }

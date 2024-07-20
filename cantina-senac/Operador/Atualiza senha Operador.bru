@@ -1,0 +1,17 @@
+meta {
+  name: Atualiza senha Operador
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:8080/operadores/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "senha": 5150
+  }
+}
