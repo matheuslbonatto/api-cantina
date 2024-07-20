@@ -2,18 +2,22 @@ package br.senac.cantina.shared.models;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table ("produtos")
 public class Produto {
     // Criar os atributos para a tabela Produto
-    private int id;
-    private char nome;
-    private char descricao;
+    @Id
+    private Long id;
+    private String nome;
+    private String descricao;
     private double preco;
     private float quantidade;
     private LocalDateTime dataHora;
     
     
-     // Criar um método construtor com todos os atributos
-    public Produto(int id, char nome, char descricao, double preco, float quantidade, LocalDateTime dataHora) {
+    public Produto(Long id, String nome, String descricao, double preco, float quantidade, LocalDateTime dataHora) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -21,24 +25,22 @@ public class Produto {
         this.quantidade = quantidade;
         this.dataHora = dataHora;
     }
-
-    // Criar os getters e setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
-    public char getNome() {
+    public String getNome() {
         return nome;
     }
-    public void setNome(char nome) {
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    public char getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
-    public void setDescricao(char descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
     public double getPreco() {
@@ -59,8 +61,5 @@ public class Produto {
     public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
     }
-
-    
-    
     
 }
