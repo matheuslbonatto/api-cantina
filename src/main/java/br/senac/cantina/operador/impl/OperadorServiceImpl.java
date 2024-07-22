@@ -45,8 +45,8 @@ public class OperadorServiceImpl implements OperadorService {
     public void deleteById(Long id) {
         operadorRepository.deleteById(id);
     }
+    
     // Atualizar senha Operador
-
     @Override
     public void update(Long id, UpdateOperadorDto dto) {
         // Busca a conta
