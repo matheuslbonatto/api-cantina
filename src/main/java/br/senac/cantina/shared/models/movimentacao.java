@@ -2,59 +2,85 @@ package br.senac.cantina.shared.models;
 
 import java.time.LocalDateTime;
 
-public class Movimentacao {
- private int id;
- private long produtoId;
- private long quantidade;
- private LocalDateTime dataHora;
- private long operadorId;
- private char tipoRegistro;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
- 
- public Movimentacao(int id, long produtoId, long quantidade, LocalDateTime dataHora, long operadorId,
-        char tipoRegistro) {
-    this.id = id;
-    this.produtoId = produtoId;
-    this.quantidade = quantidade;
-    this.dataHora = dataHora;
-    this.operadorId = operadorId;
-    this.tipoRegistro = tipoRegistro;
-}
-public int getId() {
-    return id;
-}
-public void setId(int id) {
-    this.id = id;
-}
-public long getProdutoId() {
-    return produtoId;
-}
-public void setProdutoId(long produtoId) {
-    this.produtoId = produtoId;
-}
-public long getQuantidade() {
-    return quantidade;
-}
-public void setQuantidade(long quantidade) {
-    this.quantidade = quantidade;
-}
-public LocalDateTime getDataHora() {
-    return dataHora;
-}
-public void setDataHora(LocalDateTime dataHora) {
-    this.dataHora = dataHora;
-}
-public long getOperadorId() {
-    return operadorId;
-}
-public void setOperadorId(long operadorId) {
-    this.operadorId = operadorId;
-}
-public char getTipoRegistro() {
-    return tipoRegistro;
-}
-public void setTipoRegistro(char tipoRegistro) {
-    this.tipoRegistro = tipoRegistro;
-}
- 
+@Table("movimentacoes")
+public class Movimentacao {
+    @Id
+    private Long id;
+    private Long produtoId;
+    private Long quantidade;
+    private Long operadorId;
+    private char tipoRegistro;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    public Movimentacao(Long id, Long produtoId, Long quantidade, Long operadorId, char tipoRegistro,
+            LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.produtoId = produtoId;
+        this.quantidade = quantidade;
+        this.operadorId = operadorId;
+        this.tipoRegistro = tipoRegistro;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProdutoId() {
+        return produtoId;
+    }
+
+    public void setProdutoId(Long produtoId) {
+        this.produtoId = produtoId;
+    }
+
+    public Long getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Long quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Long getOperadorId() {
+        return operadorId;
+    }
+
+    public void setOperadorId(Long operadorId) {
+        this.operadorId = operadorId;
+    }
+
+    public char getTipoRegistro() {
+        return tipoRegistro;
+    }
+
+    public void setTipoRegistro(char tipoRegistro) {
+        this.tipoRegistro = tipoRegistro;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 }
