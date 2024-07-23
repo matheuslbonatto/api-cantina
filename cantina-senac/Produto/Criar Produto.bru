@@ -1,0 +1,21 @@
+meta {
+  name: Criar Produto
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/produtos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "nome":"KUAT",
+  "descricao": "REFRIGERANTE LATA",
+  "preco": 2.99,
+  "quantidade": 0
+  }
+  
+}

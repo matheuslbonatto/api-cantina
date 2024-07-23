@@ -1,19 +1,13 @@
 package br.senac.cantina.produto.impl;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import br.senac.cantina.operador.dto.CreateOperadorDto;
 import br.senac.cantina.produto.ProdutoService;
 import br.senac.cantina.produto.dto.CreateProdutoDto;
 import br.senac.cantina.produto.dto.UpdateProdutoDto;
-import br.senac.cantina.shared.models.Operador;
+
 import br.senac.cantina.shared.models.Produto;
 import br.senac.cantina.shared.repositories.ProdutoRepository;
 
@@ -30,7 +24,7 @@ public class ProdutoServiceImpl implements ProdutoService {
     //Salvar um novo Produto
     @Override
     public Produto save(CreateProdutoDto dto) {
-       var produto= new Produto(null, dto.nome(), dto.descricao(), dto.preco(),dto.quantidade(), null);
+       var produto= new Produto(null, dto.nome(), dto.descricao(), dto.preco(),dto.quantidade(),LocalDateTime.now());
        return this.produtoRepository.save(produto);
     }
 
@@ -60,8 +54,7 @@ public class ProdutoServiceImpl implements ProdutoService {
         if (produto.getQuantidade() > 0) {
             throw new RuntimeException("Produto com saldo não pode ser excluido"); 
         } 
-        produtoRepository.deleteById(id);
-        
+           produtoRepository.deleteById(id);  
     }
 
     //Atualizar Produto

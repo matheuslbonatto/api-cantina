@@ -14,16 +14,16 @@ public class Produto {
     private String descricao;
     private double preco;
     private float quantidade;
-    private LocalDateTime dataHora;
+    private LocalDateTime datahora;
     
     
-    public Produto(Long id, String nome, String descricao, double preco, float quantidade, LocalDateTime dataHora) {
+    public Produto(Long id, String nome, String descricao, double preco, float quantidade, LocalDateTime datahora) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.dataHora = dataHora;
+        this.datahora = LocalDateTime.now();
     }
     public Long getId() {
         return id;
@@ -56,10 +56,10 @@ public class Produto {
         this.quantidade = quantidade;
     }
     public LocalDateTime getDataHora() {
-        return dataHora;
+        return datahora;
     }
-    public void setDataHora(LocalDateTime dataHora) {
-        this.dataHora = dataHora;
+    public void setDataHora(LocalDateTime datahora) {
+        this.datahora = datahora;
     }
     
 }

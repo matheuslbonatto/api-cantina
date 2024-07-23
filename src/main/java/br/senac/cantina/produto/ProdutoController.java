@@ -35,21 +35,21 @@ public class ProdutoController {
         return ResponseEntity.ok(saved);
     }
 
-// GET - Listar os Operadores
-@GetMapping("")
+// GET - Listar Produtos
+@GetMapping
     public List<Produto> getProduto(){
         return produtoService.findAll();
 }
 
 // GET - Listar produto por ID
 @GetMapping("/{id}")
-public ResponseEntity<Object> getOperdarbyId(@PathVariable long id){
+public ResponseEntity<Produto> getProdutoById(@PathVariable Long id){
     var produto = produtoService.findById(id);
-    if (produto == null) {
-        return ResponseEntity.notFound().build();
-    }
+     if (produto == null) {
+         return ResponseEntity.notFound().build();
+     }
 
-    return ResponseEntity.notFound().build();
+    return ResponseEntity.ok(produto);
 }
 
 // PATCH - Atualiza parcialmente um produto
@@ -61,8 +61,9 @@ public ResponseEntity<String> updateProduto(@PathVariable Long id, @RequestBody 
 
 //DELETE - Exclusão de Produto
 @DeleteMapping("/{id}")
-public void deleteProduto(@PathVariable Long id){
-    
+public ResponseEntity<String> deleteProduto(@PathVariable Long id){
+    produtoService.deleteById(id);
+    return ResponseEntity.ok().build();   
 }
 
 }    

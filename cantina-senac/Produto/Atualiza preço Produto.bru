@@ -1,0 +1,17 @@
+meta {
+  name: Atualiza preço Produto
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:8080/produtos/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "preco": 2.98
+  }
+}
