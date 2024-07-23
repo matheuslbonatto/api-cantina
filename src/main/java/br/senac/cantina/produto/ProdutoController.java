@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.senac.cantina.operador.dto.UpdateOperadorDto;
 import br.senac.cantina.produto.dto.CreateProdutoDto;
 import br.senac.cantina.produto.dto.UpdateProdutoDto;
 import br.senac.cantina.produto.impl.ProdutoServiceImpl;
