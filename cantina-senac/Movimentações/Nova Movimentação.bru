@@ -1,0 +1,20 @@
+meta {
+  name: Nova Movimentação
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/movimentacao
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+    "produtoId": 1,
+    "quantidade": 111,
+    "operadorId":1,
+    "tipoRegistro":"d"
+    }
+}
