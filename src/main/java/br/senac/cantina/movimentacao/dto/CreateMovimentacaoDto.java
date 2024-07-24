@@ -4,6 +4,6 @@ public record CreateMovimentacaoDto(
                 long produtoId,
                 long quantidade,
                 long operadorId,
-                char tipoRegistro) {
+                Character tipoRegistro) {
 
 }

@@ -12,7 +12,7 @@ public class Movimentacao {
     private Long produtoId;
     private Long quantidade;
     private Long operadorId;
-    private char tipoRegistro;
+    private Character tipoRegistro;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
