@@ -72,6 +72,11 @@ public class MovimentacaoServiceImpl implements MovimentacaoService {
     // Deletar um Operador por ID
     @Override
     public void deleteById(Long id) {
+        Movimentacao movimentacao = movimentacaoRepository.findById(id).get();
+        if (movimentacao == null) {
+            throw new RuntimeException("ID da Movimentação Não Encontrado");
+        }
+        
         movimentacaoRepository.deleteById(id);
     }
 
@@ -81,7 +86,7 @@ public class MovimentacaoServiceImpl implements MovimentacaoService {
         Movimentacao movimentacao = movimentacaoRepository.findById(id).get();
         // Valida se a movimentacao existe
         if (movimentacao == null) {
-            throw new RuntimeException("Movimentação Não Encontrado");
+            throw new RuntimeException("Movimentação Não Encontrada");
         }
 
         movimentacao.setQuantidade(dto.quantidade());

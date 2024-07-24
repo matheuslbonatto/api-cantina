@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.senac.cantina.movimentacao.dto.CreateMovimentacaoDto;
 import br.senac.cantina.movimentacao.dto.UpdateMovimentacaoDto;
 import br.senac.cantina.movimentacao.impl.MovimentacaoServiceImpl;
+import br.senac.cantina.shared.dto.ErrorBodyDto;
 import br.senac.cantina.shared.models.Movimentacao;
 
 @RestController
@@ -30,10 +31,17 @@ public class MovimentacaoController {
     // Criar uma nova movimentacao
 
     @PostMapping
-    public ResponseEntity<Movimentacao> save(@RequestBody CreateMovimentacaoDto dto) {
-        var saved = this.MovimentacaoService.save(dto);
-        return ResponseEntity.ok(saved);
+    public ResponseEntity<Object> save(@RequestBody CreateMovimentacaoDto dto) {
+        try{
+            var movimentacao = this.MovimentacaoService.save(dto);
+            return ResponseEntity.ok().body(movimentacao);
+        }catch (Exception e) {
+        return ResponseEntity
+        .internalServerError()
+        .body(new ErrorBodyDto(true, e.getMessage()));
+        }
     }
+    
 
     // GET - Listar as movimentacoes
     @GetMapping
@@ -55,16 +63,28 @@ public class MovimentacaoController {
 
     // PATCH - Atualiza parcialmente uma movimentacao
     @PatchMapping("/{id}")
-    public ResponseEntity<String> updateMovimantacao(@PathVariable Long id, @RequestBody UpdateMovimentacaoDto dto) {
+    public ResponseEntity<ErrorBodyDto> updateMovimantacao(@PathVariable Long id, @RequestBody UpdateMovimentacaoDto dto) {
+        try{ 
         MovimentacaoService.update(id, dto);
         return ResponseEntity.ok().build();
+    }catch (Exception e) {
+        return ResponseEntity
+        .internalServerError()
+        .body(new ErrorBodyDto(true, e.getMessage()));
+        }
     }
 
     // DELETE - Exclusão
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteMovimantacao(@PathVariable Long id) {
+    public ResponseEntity<Object> deleteMovimantacao(@PathVariable Long id) {
+     try{ 
         MovimentacaoService.deleteById(id);
         return ResponseEntity.ok().build();
+        }catch (Exception e) {
+            return ResponseEntity
+            .internalServerError()
+            .body(new ErrorBodyDto(true, e.getMessage()));
+            }
     }
 
 }

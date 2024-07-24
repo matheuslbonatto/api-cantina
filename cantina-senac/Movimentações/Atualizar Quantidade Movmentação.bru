@@ -1,0 +1,17 @@
+meta {
+  name: Atualizar Quantidade Movmentação
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:8080/movimentacao/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "quantidade": 11
+  }
+}
