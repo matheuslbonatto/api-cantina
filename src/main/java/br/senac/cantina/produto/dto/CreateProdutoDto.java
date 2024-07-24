@@ -5,9 +5,10 @@ import java.time.LocalDateTime;
 public record CreateProdutoDto (
     String nome,
     String descricao,
-    double preco,
-    float quantidade,
-    LocalDateTime dataHora){
+    Double preco,
+    Float quantidade,
+    LocalDateTime created_at,
+    LocalDateTime updated_at){
 
 }
 
